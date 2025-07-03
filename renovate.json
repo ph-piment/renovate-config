@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "dependencyDashboard": true,
+  "timezone": "Asia/Tokyo",
+  "schedule": ["after 8am on monday"],
+
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 3,
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^playwright$"],
+      "groupName": "playwright dependencies"
+    },
+    {
+      "matchPackagePatterns": ["^pytest", "^coverage"],
+      "groupName": "testing tools"
+    }
+  ]
+}
