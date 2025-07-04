@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "dependencyDashboard": true,
   "timezone": "Asia/Tokyo",
-  "schedule": ["every day after 9am"],
+  "schedule": ["after 9am every weekday"],
 
   "labels": ["dependencies"],
   "prConcurrentLimit": 3,
