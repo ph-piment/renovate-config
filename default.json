@@ -19,6 +19,18 @@
     {
       "matchManagers": ["gomod"],
       "groupName": "Go dependencies"
+    },
+    {
+      "matchManagers": ["terraform"],
+      "groupName": "Terraform dependencies"
+    },
+    {
+      "matchManagers": ["dockerfile"],
+      "groupName": "Docker dependencies"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions workflows"
     }
   ]
 }
