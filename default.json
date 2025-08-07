@@ -4,9 +4,9 @@
   "dependencyDashboard": true,
   "timezone": "Asia/Tokyo",
   "schedule": ["after 9am every weekday"],
-
   "labels": ["dependencies"],
   "prConcurrentLimit": 3,
+
   "packageRules": [
     {
       "matchPackagePatterns": ["^playwright$"],
@@ -17,7 +17,8 @@
       "groupName": "testing tools"
     },
     {
-      "matchManagers": ["gomod"],
+      "matchManagers": ["gomod", "regex"],
+      "matchPackagePatterns": ["^go$"],
       "groupName": "Go dependencies"
     },
     {
@@ -31,6 +32,15 @@
     {
       "matchManagers": ["github-actions"],
       "groupName": "GitHub Actions workflows"
+    }
+  ],
+
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.go-version$"],
+      "matchStrings": ["^(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
+      "depNameTemplate": "go",
+      "versioningTemplate": "semver"
     }
   ]
 }
