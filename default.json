@@ -41,6 +41,24 @@
       "matchStrings": ["^(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
       "depNameTemplate": "go",
       "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["^go\\.mod$"],
+      "matchStrings": ["(?m)^go (?<currentValue>\\d+\\.\\d+)$"],
+      "depNameTemplate": "go",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["^go\\.mod$"],
+      "matchStrings": ["(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
+      "depNameTemplate": "go",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["^go\\.work$"],
+      "matchStrings": ["(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
+      "depNameTemplate": "go",
+      "versioningTemplate": "semver"
     }
   ]
 }
