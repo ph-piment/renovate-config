@@ -44,9 +44,9 @@
     },
     {
       "fileMatch": ["^go\\.mod$"],
-      "matchStrings": ["(?m)^go (?<currentValue>\\d+\\.\\d+)$"],
+      "matchStrings": ["(?m)^go (?<currentValue>\\d+\\.\\d+)(?:\\.\\d+)?$"],
       "depNameTemplate": "go",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "regex"
     },
     {
       "fileMatch": ["^go\\.mod$"],
