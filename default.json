@@ -66,7 +66,7 @@
     {
       "fileMatch": [".github/workflows/.*\\.ya?ml$"],
       "matchStrings": ["version:\\s*v(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
-      "depNameTemplate": "golangci-lint",
+      "depNameTemplate": "golangci/golangci-lint",
       "versioningTemplate": "semver"
     }
   ]
