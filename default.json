@@ -17,8 +17,8 @@
       "groupName": "testing tools"
     },
     {
-      "matchManagers": ["regex"],
-      "matchPackagePatterns": ["^golang$"],
+      "matchManagers": ["gomod", "regex"],
+      "matchPackagePatterns": ["^go$"],
       "groupName": "Go dependencies"
     },
     {
@@ -39,28 +39,34 @@
     {
       "fileMatch": ["^\\.go-version$"],
       "matchStrings": ["^(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$"],
-      "depNameTemplate": "golang",
-      "versioningTemplate": "golang"
+      "depNameTemplate": "go",
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["^go\\.mod$"],
       "matchStrings": [
         "(?m)^go (?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$",
-        "(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"
+        "(?m)^toolchain go(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$"
       ],
-      "depNameTemplate": "golang",
+      "depNameTemplate": "go",
       "versioningTemplate": "golang"
     },
     {
       "fileMatch": ["^go\\.work$"],
-      "matchStrings": ["(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
-      "depNameTemplate": "golang",
-      "versioningTemplate": "golang"
+      "matchStrings": ["(?m)^toolchain go(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$"],
+      "depNameTemplate": "go",
+      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["^docker-compose\\.ya?ml$"],
       "matchStrings": ["golangci/golangci-lint:v(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
       "depNameTemplate": "golangci/golangci-lint",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": [".github/workflows/.*\\.ya?ml$"],
+      "matchStrings": ["version:\\s*v(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
+      "depNameTemplate": "golangci-lint",
       "versioningTemplate": "semver"
     }
   ]
