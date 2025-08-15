@@ -17,8 +17,8 @@
       "groupName": "testing tools"
     },
     {
-      "matchManagers": ["gomod", "regex"],
-      "matchPackagePatterns": ["^go$"],
+      "matchManagers": ["regex"],
+      "matchPackagePatterns": ["^golang$"],
       "groupName": "Go dependencies"
     },
     {
@@ -38,9 +38,9 @@
   "regexManagers": [
     {
       "fileMatch": ["^\\.go-version$"],
-      "matchStrings": ["^(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
-      "depNameTemplate": "go",
-      "versioningTemplate": "semver"
+      "matchStrings": ["^(?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$"],
+      "depNameTemplate": "golang",
+      "versioningTemplate": "golang"
     },
     {
       "fileMatch": ["^go\\.mod$"],
@@ -54,8 +54,8 @@
     {
       "fileMatch": ["^go\\.work$"],
       "matchStrings": ["(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
-      "depNameTemplate": "go",
-      "versioningTemplate": "semver"
+      "depNameTemplate": "golang",
+      "versioningTemplate": "golang"
     },
     {
       "fileMatch": ["^docker-compose\\.ya?ml$"],
