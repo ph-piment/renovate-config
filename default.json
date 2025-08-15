@@ -44,15 +44,12 @@
     },
     {
       "fileMatch": ["^go\\.mod$"],
-      "matchStrings": ["(?m)^go (?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$"],
+      "matchStrings": [
+        "(?m)^go (?<currentValue>\\d+\\.\\d+(\\.\\d+)?)$",
+        "(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"
+      ],
       "depNameTemplate": "golang",
       "versioningTemplate": "golang"
-    },
-    {
-      "fileMatch": ["^go\\.mod$"],
-      "matchStrings": ["(?m)^toolchain go(?<currentValue>\\d+\\.\\d+\\.\\d+)$"],
-      "depNameTemplate": "go",
-      "versioningTemplate": "semver"
     },
     {
       "fileMatch": ["^go\\.work$"],
